@@ -1,0 +1,22 @@
+server:
+  port: 8082
+  
+spring:
+  application:
+    name: product-service
+  datasource:
+    driver-class-name: oracle.jdbc.driver.OracleDriver
+#    url: jdbc:oracle:thin@(DESCRIPTION=(ENABLE=broken)(ADDRESS=(PROTOCOL=TCP)(HOST=10.91.144.191)(PORT=1521))(ADDRESS=(PROTOCOL=TCP)(HOST=10.91.144.191)(PORT=1521))(LOAD_BALANCE=yes)(CONNECT_DATA=(SERVER=DEDICATED)(SERVICE_NAME=DASL3)))
+    url: jdbc:oracle:thin:@10.91.144.191:1521:DASL3
+    username: DASCORE_CM_VIVEK
+    password: dascore
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+      
+      
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
